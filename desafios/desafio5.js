@@ -19,7 +19,7 @@ function calculator(operand) {
             break;
             default : "Operação inválida.";
         }
-        return "Resultado da operação: " + firstNumber + " " +  SecondNumber + " = " + result + "."
+        return "Resultado da operação: " + firstNumber + " "+ operand + " " + SecondNumber + " = " + result + "."
     }
 };
 let sum = calculator("+");
