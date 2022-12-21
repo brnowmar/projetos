@@ -1,16 +1,35 @@
-let newVar = [7, 4, 8, 1, 5]
-
-function myFunction (arg) {
-    return arg;
-}
-
-
-console.log(myFunction(newVar));    
-console.log(myFunction(newVar)[1]);
-
-function myFunction2(arr, number){
-    let number;
-    return arr[0]
+function calculator(operand) {
+    return function(firstNumber, SecondNumber) {
+        let result;
+        switch(operand){
+            case "+" :
+                result = firstNumber + SecondNumber;
+            break;
+            case "-" :
+                result = firstNumber - SecondNumber;
+            break;
+            case "*" :
+                result = firstNumber * SecondNumber;
+            break;
+            case "/" :
+                result = firstNumber / SecondNumber;
+            break;
+            case "%" :
+                result = firstNumber % SecondNumber;
+            break;
+            default : "Operação inválida.";
+        }
+        return "Resultado da operação: " + firstNumber + " " +  SecondNumber + " = " + result + "."
+    }
 };
+let sum = calculator("+");
+let subtraction = calculator("-");
+let multiplication = calculator("*");
+let division = calculator("/");
+let mod = calculator("%");
 
-console.log(myFunction2(newVar, 999))
+console.log(sum(5,10))
+console.log(subtraction(5,10))
+console.log(multiplication(5,10))
+console.log(division(5,10))
+console.log(mod(5,10))
